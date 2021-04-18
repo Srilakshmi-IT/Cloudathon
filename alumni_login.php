@@ -58,7 +58,6 @@
 					<li><a href="alumni_login.php">Alumni</a></li>
 					<li><a href="college_login.php">College Admin </a></li>
 					<li><a href="directorate_login.php">Directorate</a></li>
-					<!--<li><a href="signout.php">SignOut</a></li>-->
           </ul>
     </div>
                 <div class="signin-content">
@@ -73,10 +72,10 @@
                     <div class="signin-form">
 					
                         <h3 class="form-title">Alumni Signin</h3>
-                        <form method="POST" class="register-form" id="login-form" action="signin.php">
+                        <form method="POST" action = "alumni_login.php" class="register-form" id="login-form" action="signin.php">
                             <div class="form-group">
                                 <label for="your_name"><i class="zmdi zmdi-account material-icons-name"></i></label>
-                                <input type="text"  name="email" type="email" autofocus placeholder="email"/>
+                                <input type="text"  id = "email" name="email" type="email" autofocus placeholder="email"/>
                             </div>
                             <div class="form-group">
                                 <label for="your_pass"><i class="zmdi zmdi-lock"></i></label>
@@ -87,17 +86,9 @@
                                 <label for="remember-me" class="label-agree-term"><span><span></span></span>Remember me</label>
                             </div>
 							
-							
-							
                             <div class="form-group form-button">
                                 <input type="submit" name="signin" id="signin" class="form-submit" value="Log in"/>
-								<br><br>
-								<!--<a href="\pk\Change Password.php"style="text-decoration:none">Change password</a>
-														
-								<!--<a href="Forgot Password.php"><input type="submit" class="form-submit" name="signin" id="signin"value="Forgot Password"></a>-->
-								                            </div>
-							
-							
+								<br><br></div>
 							
                         </form>
 								
@@ -108,6 +99,28 @@
 
     </div>
 	    <br />
+      <?php
+	
+	include("dbconnection.php");
+	if(isset($_POST['signin']))
+	{
+		$email=$_POST['email'];
+		$password=$_POST['password'];
+		$check = " SELECT * FROM alumni WHERE Email ='$email' AND password='$password' ";
+		
+		$run = mysqli_query($conn,$check);
+		if(mysqli_num_rows($run))
+		{
+			
+				echo "<script>window.open('alumni_dashboard.php','_self')</script>";
+		}
+		else 
+		{
+			echo "<script>alert('Username or Password invalid')</script>";
+		}
+	}
+	
+	?>
 
     <!-- JS -->
     <script src="vendor/jquery/jquery.min.js"></script>

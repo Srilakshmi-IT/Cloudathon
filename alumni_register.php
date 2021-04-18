@@ -134,14 +134,20 @@
 </label>
 </div>
 <div class="button-holder">
-<button>Register Now</button>
+<button onclick = "sample()">Register Now</button>
 </div>
 </div>
 </form>
 </div>
 </div>
-
+<script>
+function sample()
+{
+  alert('Registration successfull, wait for college authorization','_self');
+}
+</script>";
 <script async src="https://www.googletagmanager.com/gtag/js?id=UA-23581568-13"></script>
+
 
 </body>
 </html>

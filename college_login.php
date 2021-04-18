@@ -91,11 +91,7 @@
 							
                             <div class="form-group form-button">
                                 <input type="submit" name="signin" id="signin" class="form-submit" value="Log in"/>
-								<br><br>
-								<!--<a href="\pk\Change Password.php"style="text-decoration:none">Change password</a>
-														
-								<!--<a href="Forgot Password.php"><input type="submit" class="form-submit" name="signin" id="signin"value="Forgot Password"></a>-->
-								                            </div>
+								<br><br></div>
 							
 							
 							
